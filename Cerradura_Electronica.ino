@@ -182,7 +182,7 @@ void loop()
         // si la variable cp es igual a 0, la contraseña es correcta
         if (cp == 0 & m == 0)
         {
-          // abrir puerta por tiempoApertura segundos
+          // abrir puerta por tiempoApertura microsegundos
           lcd.setCursor(0, 1);
           lcd.print("PWD ACEPTADO");
           digitalWrite(54, HIGH);
@@ -333,7 +333,7 @@ void loop()
       Serial.println(F("Detectada nueva tag"));
       lcd.setCursor(0, 1);
       lcd.print("TAG ACEPTADA ");
-      // abrir puerta por tiempoApertura segundos
+      // abrir puerta por tiempoApertura microsegundos
       digitalWrite(54, HIGH);
       delay(tiempoApertura);
       m = c = cp = np = tag = 0;
