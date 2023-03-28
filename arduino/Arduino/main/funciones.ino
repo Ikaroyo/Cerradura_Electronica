@@ -1,13 +1,5 @@
 
 //----------------------funciones----------------------
-// funcion para imprimir el UID de la tarjeta en el monitor serial (opcional)
-void printDec(byte *buffer, byte bufferSize) {
-  // Imprimir el número decimal (UID) de la tarjeta
-  for (byte i = 0; i < bufferSize; i++) {
-    Serial.print(buffer[i] < 0x10 ? " 0" : " ");
-    Serial.print(buffer[i], DEC);
-  }
-}
 
 // funcion para controlar si la puerta esta abierta o cerrada
 bool isDoorOpen() {
@@ -54,7 +46,7 @@ void closeDoorLCD() {
   lcd.clear();
   lcd.print("SCANEE TAG");
   lcd.setCursor(0, 1);
-  lcd.print("                ");
+  //lcd.print("                ");
   LCDCerrada = true;
   LCDAbierta = false;
 }

@@ -9,8 +9,6 @@ void loopIn() {
   // Imprime por pantalla un asterisco y guarda el valor de la tecla en la variable k
   if (k) {
     c++;
-    Serial.println(k);
-
     lcd.print("*");
     if (c == 1) {
       d10 = k;
@@ -145,11 +143,6 @@ void loopIn() {
   if (!rfid.PICC_ReadCardSerial())
     return;
 
-  // Codigo de debugging personal
-  // Serial.print("UID tag :");
-  // printDec(rfid.uid.uidByte, rfid.uid.size);
-  // Serial.println();
-
   // si la variable tag es mayor a 0, se solicita el tag a guardar
   if (tag > 0) {
     // actualizar tag en la memoria EEPROM
@@ -209,7 +202,6 @@ void loopIn() {
   // si el tag es correcto se abre la puerta
   if (ok == 1) {
     ok = 0;
-    Serial.println(F("Detectada nueva tag"));
     lcd.setCursor(0, 1);
     lcd.print("TAG ACEPTADA ");
     // abrir puerta por tiempoApertura microsegundos
