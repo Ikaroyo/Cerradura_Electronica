@@ -36,7 +36,8 @@ void openDoorLCD() {
   lcd.clear();
   lcd.print("PUERTA ABIERTA");
   lcd.setCursor(0, 1);
-  lcd.print("                ");
+  //lcd.print("                ");
+  m = c = cp = np = tag = 0;
   LCDAbierta = true;
   LCDCerrada = false;
 }
@@ -46,7 +47,7 @@ void closeDoorLCD() {
   lcd.clear();
   lcd.print("SCANEE TAG");
   lcd.setCursor(0, 1);
-  //lcd.print("                ");
+  m = c = cp = np = tag = 0;
   LCDCerrada = true;
   LCDAbierta = false;
 }
